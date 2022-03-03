@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav {
+  background-color: #272727;
+  height: 10vh;
+}
+
+nav .navContainer {
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .navContainer .logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+
+nav .navContainer .nav-links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .navContainer .nav-links li {
+  list-style: none;
+  padding: 5px 15px;
+}
+
+nav .navContainer .nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+nav .navContainer .nav-links a:hover {
+  color: #14a76c;
+}
+
+nav .navContainer button {
+  border: 1px solid white;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  outline: none;
+  padding: 10px 25px;
+  background: none;
+}
+
+nav .navContainer button:hover {
+  color: #272727;
+  border: 1px solid #14a76c;
+  background-color: #14a76c;
+}
+
+nav .navContainer .mobile-nav-links-closed {
+  height: 100vh;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.7s ease-in-out;
+  transition: -webkit-transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out, -webkit-transform 0.7s ease-in-out;
+}
+
+nav .navContainer .mobile-nav-links-closed img {
+  height: 35px;
+  width: 35px;
+  float: right;
+  margin: 25px;
+  background: none;
+}
+
+nav .navContainer .mobile-nav-links-closed .mobile-list {
+  margin-top: 100px;
+}
+
+nav .navContainer .mobile-nav-links-closed .active {
+  background-color: #14a76c;
+}
+
+nav .navContainer .mobile-nav-links-closed li {
+  list-style: none;
+  padding: 10px 15px;
+  background-color: white;
+  text-transform: uppercase;
+}
+
+nav .navContainer .mobile-nav-links-closed li:hover {
+  background-color: #14a76c;
+}
+
+nav .navContainer .mobile-nav-links-closed a {
+  text-decoration: none;
+  color: #272727;
+  background: none;
+}
+
+nav .navContainer .mobile-nav-links-open {
+  height: 100vh;
+  width: 50vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-animation: openNav 1.5s forwards;
+          animation: openNav 1.5s forwards;
+}
+
+nav .navContainer .mobile-nav-links-open img {
+  height: 35px;
+  width: 35px;
+  float: right;
+  margin: 25px;
+  background: none;
+}
+
+nav .navContainer .mobile-nav-links-open .mobile-list {
+  margin-top: 100px;
+}
+
+nav .navContainer .mobile-nav-links-open .active {
+  background-color: #14a76c;
+}
+
+nav .navContainer .mobile-nav-links-open li {
+  list-style: none;
+  padding: 10px 15px;
+  background-color: white;
+  text-transform: uppercase;
+}
+
+nav .navContainer .mobile-nav-links-open li:hover {
+  background-color: #14a76c;
+}
+
+nav .navContainer .mobile-nav-links-open a {
+  text-decoration: none;
+  color: #272727;
+  background: none;
+}
+
+nav .navContainer .menu-icon {
+  display: none;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  nav .navContainer .menu-icon {
+    display: block;
+  }
+  nav .navContainer .nav-links {
+    display: none;
+  }
+  nav .navContainer button {
+    display: none;
+  }
+}
+
+@-webkit-keyframes openNav {
+  0% {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  50% {
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  }
+}
+
+@keyframes openNav {
+  0% {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  50% {
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  }
+}
+/*# sourceMappingURL=styles.css.map */

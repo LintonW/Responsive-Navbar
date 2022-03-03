@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Responsive Navbar</title>
+        <link rel="stylesheet" href="styles/styles.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="navContainer">
+                <div class="logo">
+                    <a href="#">NAVBAR</a>
+                </div>
+
+                <div class="nav-links">
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Menu</a>
+                        </li>
+                        <li>
+                            <a href="#">Our Story</a>
+                        </li>
+                        <li>
+                            <a href="#">Events</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="mobile" class="mobile-nav-links-closed">
+                    <a id="close" href="#"><img src="assets/navbar/close-round-line.svg" alt="" /></a>
+
+                    <div class="mobile-list">
+                        <ul>
+                            <li class="active">
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Menu</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Story</a>
+                            </li>
+                            <li>
+                                <a href="#">Events</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="#"><button>Book Now</button></a>
+
+                <img id="open" class="menu-icon" src="assets/navbar/hamburger-menu 1.svg" alt="" />
+            </div>
+        </nav>
+
+        <script src="app.js"></script>
+    </body>
+</html>
