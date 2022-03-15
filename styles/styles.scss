@@ -106,7 +106,7 @@ nav {
                 display: block;
                 position: absolute;
                 z-index: 999;
-                background: url(/assets/navbar/Hamburger.svg);
+                background: url(../assets/navbar/Hamburger.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
 
@@ -118,7 +118,7 @@ nav {
             }
 
             .mobile-nav-toggle[aria-expanded='true'] {
-                background: url(/assets/navbar/Close.svg);
+                background: url(../assets/navbar/Close.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
             }

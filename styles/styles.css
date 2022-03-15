@@ -109,7 +109,7 @@ nav .navContainer .C-T-A:hover {
     display: block;
     position: absolute;
     z-index: 999;
-    background: url(/assets/navbar/Hamburger.svg);
+    background: url(../assets/navbar/Hamburger.svg);
     background-size: contain;
     background-repeat: no-repeat;
     width: 2em;
@@ -119,7 +119,7 @@ nav .navContainer .C-T-A:hover {
     right: 2em;
   }
   nav .navContainer .mobile-nav-toggle[aria-expanded='true'] {
-    background: url(/assets/navbar/Close.svg);
+    background: url(../assets/navbar/Close.svg);
     background-size: contain;
     background-repeat: no-repeat;
   }
