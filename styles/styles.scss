@@ -128,9 +128,9 @@ nav {
             }
 
             .active {
-                background-color: #f9f9f8;
+                background-color: $primary_color;
                 a {
-                    color: #262524;
+                    color: $secondary_color;
                 }
             }
         }
