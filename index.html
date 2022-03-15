@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Responsive Navbar</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="styles/styles.css" />
     </head>
     <body>
@@ -14,9 +17,11 @@
                     <a href="#">NAVBAR</a>
                 </div>
 
+                <button aria-expanded="false" class="mobile-nav-toggle"></button>
+
                 <div class="nav-links">
-                    <ul>
-                        <li>
+                    <ul id="primary-nav" data-visible="false" class="primary-nav">
+                        <li class="active">
                             <a href="#">Home</a>
                         </li>
                         <li>
@@ -34,33 +39,7 @@
                     </ul>
                 </div>
 
-                <div id="mobile" class="mobile-nav-links-closed">
-                    <a id="close" href="#"><img src="assets/navbar/close-round-line.svg" alt="" /></a>
-
-                    <div class="mobile-list">
-                        <ul>
-                            <li class="active">
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">Menu</a>
-                            </li>
-                            <li>
-                                <a href="#">Our Story</a>
-                            </li>
-                            <li>
-                                <a href="#">Events</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <a href="#"><button>Book Now</button></a>
-
-                <img id="open" class="menu-icon" src="assets/navbar/hamburger-menu 1.svg" alt="" />
+                <a href="#"><button class="C-T-A">Book Now</button></a>
             </div>
         </nav>
 

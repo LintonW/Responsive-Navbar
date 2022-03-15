@@ -3,11 +3,17 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f9f9f8;
+  overflow-x: hidden;
 }
 
 nav {
-  background-color: #272727;
   height: 10vh;
+  width: 100vw;
 }
 
 nav .navContainer {
@@ -27,7 +33,7 @@ nav .navContainer {
 
 nav .navContainer .logo a {
   text-decoration: none;
-  color: white;
+  color: #262524;
   font-size: 2rem;
 }
 
@@ -44,18 +50,18 @@ nav .navContainer .nav-links li {
 
 nav .navContainer .nav-links a {
   text-decoration: none;
-  color: white;
+  color: #262524;
 }
 
-nav .navContainer .nav-links a:hover {
-  color: #14a76c;
+nav .navContainer .mobile-nav-toggle {
+  display: none;
 }
 
-nav .navContainer button {
-  border: 1px solid white;
+nav .navContainer .C-T-A {
+  border: 1px solid #262524;
   border-radius: 50px;
   text-decoration: none;
-  color: white;
+  color: #262524;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
@@ -64,154 +70,67 @@ nav .navContainer button {
   background: none;
 }
 
-nav .navContainer button:hover {
-  color: #272727;
-  border: 1px solid #14a76c;
-  background-color: #14a76c;
-}
-
-nav .navContainer .mobile-nav-links-closed {
-  height: 100vh;
-  width: 50%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 999;
-  background-color: white;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.7s ease-in-out;
-  transition: -webkit-transform 0.7s ease-in-out;
-  transition: transform 0.7s ease-in-out;
-  transition: transform 0.7s ease-in-out, -webkit-transform 0.7s ease-in-out;
-}
-
-nav .navContainer .mobile-nav-links-closed img {
-  height: 35px;
-  width: 35px;
-  float: right;
-  margin: 25px;
-  background: none;
-}
-
-nav .navContainer .mobile-nav-links-closed .mobile-list {
-  margin-top: 100px;
-}
-
-nav .navContainer .mobile-nav-links-closed .active {
-  background-color: #14a76c;
-}
-
-nav .navContainer .mobile-nav-links-closed li {
-  list-style: none;
-  padding: 10px 15px;
-  background-color: white;
-  text-transform: uppercase;
-}
-
-nav .navContainer .mobile-nav-links-closed li:hover {
-  background-color: #14a76c;
-}
-
-nav .navContainer .mobile-nav-links-closed a {
-  text-decoration: none;
-  color: #272727;
-  background: none;
-}
-
-nav .navContainer .mobile-nav-links-open {
-  height: 100vh;
-  width: 50vw;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 999;
-  background-color: white;
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  -webkit-animation: openNav 1.5s forwards;
-          animation: openNav 1.5s forwards;
-}
-
-nav .navContainer .mobile-nav-links-open img {
-  height: 35px;
-  width: 35px;
-  float: right;
-  margin: 25px;
-  background: none;
-}
-
-nav .navContainer .mobile-nav-links-open .mobile-list {
-  margin-top: 100px;
-}
-
-nav .navContainer .mobile-nav-links-open .active {
-  background-color: #14a76c;
-}
-
-nav .navContainer .mobile-nav-links-open li {
-  list-style: none;
-  padding: 10px 15px;
-  background-color: white;
-  text-transform: uppercase;
-}
-
-nav .navContainer .mobile-nav-links-open li:hover {
-  background-color: #14a76c;
-}
-
-nav .navContainer .mobile-nav-links-open a {
-  text-decoration: none;
-  color: #272727;
-  background: none;
-}
-
-nav .navContainer .menu-icon {
-  display: none;
-  height: 35px;
-  width: 35px;
-  cursor: pointer;
+nav .navContainer .C-T-A:hover {
+  color: #f9f9f8;
+  border: 1px solid #262524;
+  background-color: #262524;
 }
 
 @media only screen and (max-width: 900px) {
-  nav .navContainer .menu-icon {
+  nav .navContainer .nav-links .primary-nav {
+    background-color: #262524;
+    position: fixed;
+    inset: 0 0 0 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 5em;
+    z-index: 99;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  }
+  nav .navContainer .nav-links .primary-nav[data-visible='true'] {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  nav .navContainer .nav-links li {
+    padding: 0.8em 1em;
+  }
+  nav .navContainer .nav-links a {
+    text-transform: uppercase;
+    color: #f9f9f8;
+  }
+  nav .navContainer .mobile-nav-toggle {
     display: block;
+    position: absolute;
+    z-index: 999;
+    background: url(/assets/navbar/Hamburger.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2em;
+    height: 2em;
+    border: 0;
+    top: 2.4em;
+    right: 2em;
   }
-  nav .navContainer .nav-links {
+  nav .navContainer .mobile-nav-toggle[aria-expanded='true'] {
+    background: url(/assets/navbar/Close.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  nav .navContainer .C-T-A {
     display: none;
   }
-  nav .navContainer button {
-    display: none;
+  nav .navContainer .active {
+    background-color: #f9f9f8;
   }
-}
-
-@-webkit-keyframes openNav {
-  0% {
-    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  50% {
-    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
-            clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
-  }
-  100% {
-    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-  }
-}
-
-@keyframes openNav {
-  0% {
-    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  50% {
-    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
-            clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
-  }
-  100% {
-    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  nav .navContainer .active a {
+    color: #262524;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,15 +1,21 @@
-$primary_color: #272727;
-$secondary_color: #14a76c;
+$primary_color: #f9f9f8;
+$secondary_color: #262524;
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: $primary_color;
+    overflow-x: hidden;
 }
 
 nav {
-    background-color: $primary_color;
     height: 10vh;
+    width: 100vw;
 
     .navContainer {
         height: 100%;
@@ -22,7 +28,7 @@ nav {
         .logo {
             a {
                 text-decoration: none;
-                color: white;
+                color: $secondary_color;
                 font-size: 2rem;
             }
         }
@@ -39,19 +45,19 @@ nav {
 
             a {
                 text-decoration: none;
-                color: white;
-
-                &:hover {
-                    color: $secondary_color;
-                }
+                color: $secondary_color;
             }
         }
 
-        button {
-            border: 1px solid white;
+        .mobile-nav-toggle {
+            display: none;
+        }
+
+        .C-T-A {
+            border: 1px solid $secondary_color;
             border-radius: 50px;
             text-decoration: none;
-            color: white;
+            color: $secondary_color;
             transition: 0.3s;
             cursor: pointer;
             outline: none;
@@ -64,132 +70,69 @@ nav {
                 background-color: $secondary_color;
             }
         }
-
-        .mobile-nav-links-closed {
-            height: 100vh;
-            width: 50%;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: 999;
-            background-color: white;
-            transform: translateX(100%);
-            transition: transform 0.7s ease-in-out;
-
-            img {
-                height: 35px;
-                width: 35px;
-                float: right;
-                margin: 25px;
-                background: none;
-            }
-
-            .mobile-list {
-                margin-top: 100px;
-            }
-
-            .active {
-                background-color: $secondary_color;
-            }
-
-            li {
-                list-style: none;
-                padding: 10px 15px;
-                background-color: white;
-                text-transform: uppercase;
-
-                &:hover {
-                    background-color: $secondary_color;
-                }
-            }
-
-            a {
-                text-decoration: none;
-                color: $primary_color;
-                background: none;
-            }
-        }
-        .mobile-nav-links-open {
-            height: 100vh;
-            width: 50vw;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: 999;
-            background-color: white;
-            transform: translateX(0%);
-            animation: openNav 1.5s forwards;
-
-            img {
-                height: 35px;
-                width: 35px;
-                float: right;
-                margin: 25px;
-                background: none;
-            }
-
-            .mobile-list {
-                margin-top: 100px;
-            }
-
-            .active {
-                background-color: $secondary_color;
-            }
-
-            li {
-                list-style: none;
-                padding: 10px 15px;
-                background-color: white;
-                text-transform: uppercase;
-
-                &:hover {
-                    background-color: $secondary_color;
-                }
-            }
-
-            a {
-                text-decoration: none;
-                color: $primary_color;
-                background: none;
-            }
-        }
-
-        .menu-icon {
-            display: none;
-            height: 35px;
-            width: 35px;
-            cursor: pointer;
-        }
     }
 }
 
 @media only screen and (max-width: 900px) {
     nav {
         .navContainer {
-            .menu-icon {
-                display: block;
-            }
-
             .nav-links {
+                .primary-nav {
+                    background-color: $secondary_color;
+                    position: fixed;
+                    inset: 0 0 0 50%;
+                    flex-direction: column;
+                    padding-top: 5em;
+                    z-index: 99;
+                    transform: translateX(100%);
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                .primary-nav[data-visible='true'] {
+                    transform: translateX(0%);
+                }
+
+                li {
+                    padding: 0.8em 1em;
+                }
+
+                a {
+                    text-transform: uppercase;
+                    color: $primary_color;
+                }
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+                position: absolute;
+                z-index: 999;
+                background: url(/assets/navbar/Hamburger.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                width: 2em;
+                height: 2em;
+                border: 0;
+                top: 2.4em;
+                right: 2em;
+            }
+
+            .mobile-nav-toggle[aria-expanded='true'] {
+                background: url(/assets/navbar/Close.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .C-T-A {
                 display: none;
             }
 
-            button {
-                display: none;
+            .active {
+                background-color: #f9f9f8;
+                a {
+                    color: #262524;
+                }
             }
         }
-    }
-}
-
-@keyframes openNav {
-    0% {
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    }
-    50% {
-        clip-path: polygon(100% 0, 0 0, 100% 100%, 100% 100%);
-    }
-
-    100% {
-        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
     }
 }
